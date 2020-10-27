@@ -68,14 +68,16 @@ class ScheduledPayment(models.Model):
 #     created_at = models.DateTimeField(auto_now_add=True)
 #     account = models.ForeignKey(Account, models.CASCADE, related_name='other_transfers')
 #     type_of_operation = models.CharField #deposit, withdraw, send, recieve
+#     description = models.CharField #other information about this operation
 #     amount = models.DecimalField(max_digits=18, decimal_places=2)
 #
 #     @staticmethod
-#     def do_transfer(account: Account, type_of_operation: str, amount: Decimal):
+#     def do_transfer(account: Account, type_of_operation: str, description: str amount: Decimal):
 #         # operation logic here
 #
 #         return OtherActivities.objects.create(
 #             account=account,
 #             type_of_operation=type_of_operation,
+#             description=description,
 #             amount=amount
 #         )
